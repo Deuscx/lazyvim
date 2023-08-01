@@ -16,7 +16,8 @@ if vim.g.vscode then
     -- VSCode KeyMap
     map("n", "<Leader>o", "<Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
     map("n", "<S-Tab>", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
-
+    map("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
+    
     -- Copy in normal mode. when https://github.com/vscode-neovim/vscode-neovim/issues/1266 fixed. Remove it and use `y` to copy
     map("n", "<C-c>", "<Cmd>call VSCodeNotify('editor.action.clipboardCopyAction')<CR>")
 
@@ -29,3 +30,7 @@ end
 
 -- Select All
 map("n", "<C-a>", "ggVG")
+
+-- increase & decrease
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
