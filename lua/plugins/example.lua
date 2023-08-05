@@ -1,5 +1,6 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
+-- if true then return {} end
 if true then return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -24,7 +25,38 @@ if true then return {
         "css"
       },
     },
-  }
+    -- config = function(_, opts)
+    -- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+    -- parser_config.vue = {
+    --   install_info = {
+    --     url = "https://github.com/Deuscx/tree-sitter-vue", -- local path or git repo
+    --     files = {"src/parser.c", "src/scanner.cc"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+    --     -- optional entries:
+    --     branch = "main", -- default branch in case of git repo if different from master
+    --     generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+    --     requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+    --     revision = "cd6048119e6efbfb60b543fd9e7684eec004bea7"
+    --   },
+    --   filetype = "vue", -- if filetype does not match the parser name
+    --   maintainers = { "@Deuscx" },
+    -- }
+    -- end
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "ma",
+        delete = "md",
+        find = "mf",
+        find_left = "mF",
+        highlight = "mh",
+        replace = "mr",
+        update_n_lines = "mn",
+      },
+    },
+  },
 } end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
