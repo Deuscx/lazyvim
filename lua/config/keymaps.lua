@@ -50,3 +50,6 @@ map("n", "<C-a>", "ggVG")
 -- increase & decrease
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
+
+map("n","<c-u>", "<c-u>zz")
+map("n","<c-d>", "<c-d>zz")
