@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-
 -- This file is automatically loaded by lazyvim.config.init
 local Util = require("lazyvim.util")
 
@@ -42,6 +41,7 @@ if vim.g.vscode then
     map("n", "<Leader>i", "<Cmd>call VSCodeNotify('extension.toggleBool')<CR>")
 else
     -- ordinary Neovim
+    map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 end
 
 -- Select All
@@ -51,5 +51,5 @@ map("n", "<C-a>", "ggVG")
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
 
-map("n","<c-u>", "<c-u>zz")
-map("n","<c-d>", "<c-d>zz")
+map("n", "<c-u>", "<c-u>zz")
+map("n", "<c-d>", "<c-d>zz")

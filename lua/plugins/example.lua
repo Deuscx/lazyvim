@@ -22,7 +22,8 @@ if true then return {
         "yaml",
         "rust",
         "vue",
-        "css"
+        "css",
+        "go"
       },
     },
     -- config = function(_, opts)
