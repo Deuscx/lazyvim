@@ -31,6 +31,8 @@ if vim.g.vscode then
     map("n", "<S-Tab>", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
     map("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
 
+    map("n", "g[", "<Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>")
+    map("n", "g]", "<Cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>")
     -- Copy in normal mode. when https://github.com/vscode-neovim/vscode-neovim/issues/1266 fixed. Remove it and use `y` to copy
     map("n", "<C-c>", "<Cmd>call VSCodeNotify('editor.action.clipboardCopyAction')<CR>")
 
