@@ -28,7 +28,6 @@ if vim.g.vscode then
 
     -- VSCode KeyMap
     map("n", "<Leader>o", "<Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
-    map("n", "<S-Tab>", "<Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
     map("n", "gr", "<Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>")
 
     map("n", "g[", "<Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>")
@@ -52,6 +51,9 @@ map("n", "<C-a>", "ggVG")
 -- increase & decrease
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
+
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 map("n", "<c-u>", "<c-u>zz")
 map("n", "<c-d>", "<c-d>zz")
