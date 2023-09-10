@@ -3,48 +3,6 @@
 -- if true then return {} end
 if true then return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-        "rust",
-        "vue",
-        "css",
-        "go"
-      },
-    },
-    -- config = function(_, opts)
-    -- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-    -- parser_config.vue = {
-    --   install_info = {
-    --     url = "https://github.com/Deuscx/tree-sitter-vue", -- local path or git repo
-    --     files = {"src/parser.c", "src/scanner.cc"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
-    --     -- optional entries:
-    --     branch = "main", -- default branch in case of git repo if different from master
-    --     generate_requires_npm = false, -- if stand-alone parser without npm dependencies
-    --     requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
-    --     revision = "cd6048119e6efbfb60b543fd9e7684eec004bea7"
-    --   },
-    --   filetype = "vue", -- if filetype does not match the parser name
-    --   maintainers = { "@Deuscx" },
-    -- }
-    -- end
-  },
-  {
     "echasnovski/mini.surround",
     opts = {
       mappings = {
@@ -58,6 +16,23 @@ if true then return {
       },
     },
   },
+  -- Replace until https://github.com/folke/flash.nvim/pull/230 merged
+  {
+    "xiyaowong/flash.nvim",
+    branch="feat/enable-multi-window-in-vscode",
+    event = "VeryLazy",
+    name="flashnvimWithMultiWindow",
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  }
 } end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
