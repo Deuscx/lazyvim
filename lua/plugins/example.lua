@@ -16,6 +16,14 @@ if true then return {
       },
     },
   },
+  {
+    'vscode-neovim/vscode-multi-cursor.nvim',
+    event = 'VeryLazy',
+    cond = not not vim.g.vscode,
+    opts = function(plugin, opts)
+      return opts
+    end
+  }
 } end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
