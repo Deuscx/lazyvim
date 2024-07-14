@@ -15,14 +15,6 @@ if true then return {
         update_n_lines = "mn",
       },
     },
-  },
-  {
-    'vscode-neovim/vscode-multi-cursor.nvim',
-    event = 'VeryLazy',
-    cond = not not vim.g.vscode,
-    opts = function(plugin, opts)
-      return opts
-    end
   }
 } end
 
